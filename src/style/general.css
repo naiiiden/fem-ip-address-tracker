@@ -61,4 +61,7 @@ html {
   html {
     scroll-behavior: auto !important;
   }
+}
+p {
+  color: hsl(0, 0%, 59%);
 }/*# sourceMappingURL=general.css.map */

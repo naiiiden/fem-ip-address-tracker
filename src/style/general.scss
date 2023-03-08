@@ -1,1 +1,6 @@
 @import "./reset";
+@import "./variables";
+
+p {
+    color: $dark-gray;
+}
