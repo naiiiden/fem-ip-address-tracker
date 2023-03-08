@@ -97,6 +97,27 @@ main .input-data-container {
   align-items: center;
   gap: 2rem;
 }
+main .input-submit-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main .input-submit-container input[type=text] {
+  width: 80%;
+  max-width: 400px;
+  border: none;
+  border-radius: 0.75rem 0 0 0.75rem;
+  padding: 1rem;
+  font-size: 0.875rem;
+}
+main .input-submit-container input[type=submit] {
+  width: 50px;
+  height: 50px;
+  color: transparent;
+  border: none;
+  background: black url(../assets/icon-arrow.svg) no-repeat center;
+  border-radius: 0 0.75rem 0.75rem 0;
+}
 main .data-container {
   width: 100%;
   padding: 1.5rem 0;
@@ -126,7 +147,7 @@ main .data-container .data-text p:nth-child(1) {
   main .data-container {
     display: grid;
     gap: unset;
-    grid-template-columns: repeat(4, minmax(0, 250px));
+    grid-template-columns: repeat(4, minmax(0, 200px));
     width: -moz-fit-content;
     width: fit-content;
   }

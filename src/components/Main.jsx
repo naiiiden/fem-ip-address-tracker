@@ -5,7 +5,7 @@ const Main = () => {
 
             <div className="input-data-container">
                 <div className="input-submit-container">
-                    <input type="text" />
+                    <input type="text" placeholder="Search for any IP address or domain"/>
                     <input type="submit" value=">"/>
                 </div>
                 <div className="data-container">
