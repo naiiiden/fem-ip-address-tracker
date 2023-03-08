@@ -1,3 +1,5 @@
+import "./style/general.css";
+
 function App() {
 
   return (
