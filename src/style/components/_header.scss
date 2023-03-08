@@ -1,6 +1,6 @@
 header {
     color: #fff;
-    height: 20rem;
+    min-height: 18rem;
     background: url(../assets/pattern-bg-mobile.png) no-repeat;
     background-size: 100% 100%;
 
@@ -15,5 +15,6 @@ header {
 @media screen and (min-width: 500px) {
     header {
         background: url(../assets/pattern-bg-desktop.png) no-repeat;
+        background-size: cover;
     }
 }

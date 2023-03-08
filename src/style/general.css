@@ -65,7 +65,7 @@ html {
 }
 header {
   color: #fff;
-  height: 20rem;
+  min-height: 18rem;
   background: url(../assets/pattern-bg-mobile.png) no-repeat;
   background-size: 100% 100%;
 }
@@ -79,8 +79,19 @@ header h1 {
 @media screen and (min-width: 500px) {
   header {
     background: url(../assets/pattern-bg-desktop.png) no-repeat;
+    background-size: cover;
   }
 }
+main {
+  height: 100%;
+}
+
 body {
   font-family: Rubik, sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }/*# sourceMappingURL=general.css.map */
