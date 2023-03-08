@@ -27,17 +27,6 @@ const Main = () => {
                     </div>
                 </div>
             </div>
-
-            <h1>asd</h1>
-            <h1>useless</h1>
-            <h1>text</h1>
-            <h1>text</h1>
-            <h1>text</h1>
-            <h1>text</h1>
-            <h1>text</h1>
-            <h1>text</h1>
-            <h1>text</h1>
-            <h1>text</h1>
         </main>
     )
 }
