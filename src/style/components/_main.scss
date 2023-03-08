@@ -29,6 +29,7 @@ main {
             color: $very-dark-gray;
             font-weight: 500;
             font-size: 1.125rem;
+            overflow-wrap: break-word;
 
             p:nth-child(1) {
                 text-transform: uppercase;
@@ -44,30 +45,18 @@ main {
 @media screen and (min-width: 768px) {
     main {
         .data-container {
-            flex-direction: row;
-            justify-content: center;
+            display: grid;
             gap: unset;
-            max-width: fit-content;
+            grid-template-columns: repeat(4, minmax(0, 250px));
+            width: fit-content;
 
             .data-text {
-                width: 200px;
-                max-width: 250px;
                 text-align: start;
                 padding: 0 2rem;
-                font-size: 1.25rem;
+                position: relative;
 
                 &:not(:last-child) {
-                    position: relative;
-
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        right: 0;
-                        top: 0;
-                        height: 62.5px;
-                        width: 0;
-                        border-right: 1px solid $dark-gray;
-                    }
+                    border-right: 1px solid $dark-gray;
                 }
             }
         }
