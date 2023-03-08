@@ -2,8 +2,6 @@ main {
     height: 100%;
     background: red;
 
-
-
     .input-data-container {
         position: absolute;
         left: 0;
@@ -62,7 +60,7 @@ main {
                 text-transform: uppercase;
                 font-weight: 700;
                 font-size: .75rem;
-                color: $dark-gray;
+                color: #757575;
                 letter-spacing: .15rem;
             }
         }
@@ -72,14 +70,15 @@ main {
 @media screen and (min-width: 768px) {
     main {
         .data-container {
+            padding: 2rem 0;
             display: grid;
             gap: unset;
-            grid-template-columns: repeat(4, minmax(0, 200px));
+            grid-template-columns: repeat(4, minmax(0, 250px));
             width: fit-content;
 
             .data-text {
                 text-align: start;
-                padding: 0 2rem;
+                padding: 0 1.5rem;
                 position: relative;
 
                 &:not(:last-child) {
