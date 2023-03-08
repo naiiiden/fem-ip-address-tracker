@@ -11,3 +11,9 @@ header {
         padding: 2rem 0;
     }
 }
+
+@media screen and (min-width: 500px) {
+    header {
+        background: url(../assets/pattern-bg-desktop.png) no-repeat;
+    }
+}

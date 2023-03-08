@@ -76,6 +76,11 @@ header h1 {
   padding: 2rem 0;
 }
 
+@media screen and (min-width: 500px) {
+  header {
+    background: url(../assets/pattern-bg-desktop.png) no-repeat;
+  }
+}
 body {
   font-family: Rubik, sans-serif;
 }/*# sourceMappingURL=general.css.map */
