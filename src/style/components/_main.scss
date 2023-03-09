@@ -1,6 +1,10 @@
 main {
     height: 100%;
-    background: red;
+
+    #map {
+        min-height: 600px;
+        height: 100%;
+    }
 
     .input-data-container {
         position: absolute;

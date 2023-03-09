@@ -84,7 +84,10 @@ header h1 {
 }
 main {
   height: 100%;
-  background: red;
+}
+main #map {
+  min-height: 600px;
+  height: 100%;
 }
 main .input-data-container {
   position: absolute;

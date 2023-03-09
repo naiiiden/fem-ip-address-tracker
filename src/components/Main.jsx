@@ -1,13 +1,11 @@
 const Main = () => {
     return (
         <main>
-
-
             <div className="input-data-container">
-                <div className="input-submit-container">
-                    <input type="text" placeholder="Search for any IP address or domain"/>
+                <form className="input-submit-container">
+                    <input type="text" placeholder="Search for any IP address or domain" aria-label="Search for any IP address or domain"/>
                     <input type="submit" value="Send request"/>
-                </div>
+                </form>
                 <div className="data-container">
                     <div className="data-text">
                         <p>IP Address</p>
