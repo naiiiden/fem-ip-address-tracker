@@ -18,7 +18,7 @@ const Main = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${api_key}&ipAddress=${inputValue}`)
+        fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${api_key}&ipAddress=${inputValue}&domain=${inputValue}`)
           .then((response) => response.json())
           .then((data) => {
             setData(data);
