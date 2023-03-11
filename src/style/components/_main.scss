@@ -15,12 +15,14 @@ main {
     }
 
     .input-data-container {
-        margin: -11.35rem 2rem 0 2rem;
-        z-index: 2;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1rem;
+        padding: 0 1rem;
+        position: absolute;
+        transform: translate(0%, -55%);
+        width: 100%;
     }
 
     .input-submit-container {
@@ -61,7 +63,6 @@ main {
             text-align: center;
             color: $very-dark-gray;
             font-weight: 500;
-            font-size: 1.125rem;
             overflow-wrap: break-word;
 
             p:nth-child(1) {
@@ -78,7 +79,7 @@ main {
 @media screen and (min-width: 768px) {
     main {
         .input-data-container {
-            margin: -8.35rem 2rem 0 2rem;
+            transform: translate(0%, -67.5%);
         }
 
         .data-container {
