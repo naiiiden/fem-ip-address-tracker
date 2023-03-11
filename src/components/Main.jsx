@@ -55,6 +55,8 @@ const Main = () => {
                     </div>
                 </div>
             </div>
+
+            <div id="map"><p>test</p></div>
         </main>
     )
 }
