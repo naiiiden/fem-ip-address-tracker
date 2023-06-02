@@ -91,16 +91,14 @@ main {
   height: 100%;
   position: relative;
 }
-main #map {
+main .leaflet-container {
   min-height: 500px;
   height: 100%;
-  background: red;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   inset: 0 0 0 0;
-  z-index: -1;
 }
 main .input-data-container {
   display: flex;
@@ -111,6 +109,7 @@ main .input-data-container {
   position: absolute;
   transform: translate(0%, -55%);
   width: 100%;
+  z-index: 999;
 }
 main .input-submit-container {
   width: 100%;

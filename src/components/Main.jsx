@@ -1,5 +1,12 @@
 const api_key = import.meta.env.VITE_GEO_API_KEY;
 import { useState, useEffect } from "react";
+import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css';
+
+const newicon = new L.icon({
+    iconUrl: "../src/assets/icon-location.svg",
+    iconSize: [30, 30]
+  });
 
 const Main = () => {
     const [data, setData] = useState([]);
@@ -56,7 +63,19 @@ const Main = () => {
                 </div>
             </div>
 
-            <div id="map"><p>test</p></div>
+            {/* <div id="map"> */}
+                <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+                    <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    <Marker position={[51.505, -0.09]} icon={newicon}>
+                        <Popup>
+                        A pretty CSS3 popup. <br /> Easily customizable.
+                        </Popup>
+                    </Marker>
+                </MapContainer>
+            {/* </div> */}
         </main>
     )
 }
