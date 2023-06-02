@@ -101,3 +101,13 @@ main {
         }
     }
 }
+
+@media (hover: hover) {
+    main {
+        .input-submit-container {
+            input[type='submit']:hover, input[type='submit']:focus-visible {
+                background: lighten($color: #000, $amount: 25%) url(../assets/icon-arrow.svg) no-repeat center;
+            }
+        }
+    }
+}

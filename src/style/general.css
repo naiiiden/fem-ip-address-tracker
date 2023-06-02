@@ -178,6 +178,11 @@ main .data-container .data-text p:nth-child(1) {
     border-right: 1px solid hsl(0, 0%, 59%);
   }
 }
+@media (hover: hover) {
+  main .input-submit-container input[type=submit]:hover, main .input-submit-container input[type=submit]:focus-visible {
+    background: #404040 url(../assets/icon-arrow.svg) no-repeat center;
+  }
+}
 body {
   font-family: Rubik, sans-serif;
 }
