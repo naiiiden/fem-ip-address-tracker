@@ -35,7 +35,9 @@ const Main = () => {
           .then((data) => {
             setData(data);
             console.log(data);
-            setLocation({ lat: data?.location?.lat, lng: data?.location?.lng })
+            if (data?.location?.lat !== undefined && data?.location?.lng !== undefined) {
+                setLocation({ lat: data?.location?.lat, lng: data?.location?.lng })
+            }
           })
           .catch((error) => {
             console.log(error);
