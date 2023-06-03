@@ -1,6 +1,6 @@
 const api_key = import.meta.env.VITE_GEO_API_KEY;
 import { useState, useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, useMap, Popup, ZoomControl } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css';
 
 const newicon = new L.icon({
@@ -42,6 +42,16 @@ const Main = () => {
           });
     };
 
+    function FlyMapTo({ center }) {
+        const map = useMap();
+      
+        useEffect(() => {
+          map.flyTo(center);
+        });
+      
+        return null;
+    }
+
     return (
         <main>
             <div className="input-data-container">
@@ -81,6 +91,7 @@ const Main = () => {
                         A pretty CSS3 popup. <br /> Easily customizable.
                         </Popup>
                     </Marker>
+                    <FlyMapTo center={[location?.lat, location?.lng]} zoom={16}/>
                 </MapContainer>
             }
         </main>
