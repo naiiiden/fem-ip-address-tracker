@@ -1,11 +1,11 @@
 const api_key = import.meta.env.VITE_GEO_API_KEY;
 import { useState, useEffect } from "react";
-import { MapContainer, TileLayer, Marker, useMap, Popup, ZoomControl } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, useMap, ZoomControl } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css';
 
 const newicon = new L.icon({
     iconUrl: "../src/assets/icon-location.svg",
-    iconSize: [30, 30]
+    iconSize: [25, 30]
   });
 
 const Main = () => {
@@ -88,11 +88,7 @@ const Main = () => {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
                     <ZoomControl position="bottomright"/>
-                    <Marker position={[location?.lat, location?.lng]} icon={newicon}>
-                        <Popup>
-                        A pretty CSS3 popup. <br /> Easily customizable.
-                        </Popup>
-                    </Marker>
+                    <Marker position={[location?.lat, location?.lng]} icon={newicon}/>
                     <FlyMapTo center={[location?.lat, location?.lng]} zoom={16}/>
                 </MapContainer>
             }
