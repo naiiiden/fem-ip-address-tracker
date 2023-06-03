@@ -10,12 +10,17 @@ const newicon = new L.icon({
 
 const Main = () => {
     const [data, setData] = useState([]);
+    const [location, setLocation] = useState({ lat: null, lng: null })
     const [inputValue, setInputValue] = useState("");
 
     useEffect(() => {
         fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${api_key}&ipAddress=${inputValue}`)
             .then((response) => response.json())
-            .then((data) => {setData(data); console.log(data)})
+            .then((data) => {
+                setData(data); 
+                console.log(data); 
+                setLocation({ lat: data?.location?.lat, lng: data?.location?.lng })
+            })
             .catch((error) => console.log(error));
     }, []);
 
@@ -30,6 +35,7 @@ const Main = () => {
           .then((data) => {
             setData(data);
             console.log(data);
+            setLocation({ lat: data?.location?.lat, lng: data?.location?.lng })
           })
           .catch((error) => {
             console.log(error);
@@ -63,20 +69,20 @@ const Main = () => {
                 </div>
             </div>
 
-            <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false} zoomControl={false}>
-                <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                    <ZoomControl position="bottomright">
-
-                    </ZoomControl>
-                    <Marker position={[51.505, -0.09]} icon={newicon}>
+            {(location?.lat !== null && location?.lng !== null) && 
+                <MapContainer center={[location?.lat, location?.lng]} zoom={16} scrollWheelZoom={false} zoomControl={false}>
+                    <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    <ZoomControl position="bottomright"/>
+                    <Marker position={[location?.lat, location?.lng]} icon={newicon}>
                         <Popup>
                         A pretty CSS3 popup. <br /> Easily customizable.
                         </Popup>
                     </Marker>
-            </MapContainer>
+                </MapContainer>
+            }
         </main>
     )
 }
