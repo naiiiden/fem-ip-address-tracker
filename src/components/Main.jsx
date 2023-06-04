@@ -12,7 +12,6 @@ const Main = () => {
     const [data, setData] = useState([]);
     const [location, setLocation] = useState({ lat: null, lng: null })
     const [inputValue, setInputValue] = useState("");
-    const [error, setError] = useState(null)
 
     useEffect(() => {
         fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${api_key}&ipAddress=${inputValue}`)
@@ -35,10 +34,9 @@ const Main = () => {
           .then((data) => {
             setData(data);
             if (data?.location?.lat !== undefined && data?.location?.lng !== undefined) {
-                setError(null)
                 setLocation({ lat: data?.location?.lat, lng: data?.location?.lng })
             } else {
-                setError('Please provide a valid address')
+                alert('Please enter a valid address')
             }
           })
           .catch((error) => {
@@ -60,7 +58,6 @@ const Main = () => {
         <main>
             <div className="input-data-container">
                 <form className="input-submit-container" onSubmit={handleSubmit}>
-                    {error && <span className="form-error">{error}</span>}
                     <input type="text" placeholder="Search for any IP address or domain" aria-label="Search for any IP address or domain" value={inputValue} onChange={handleInputChange}/>
                     <input type="submit" value="Send request"/>
                 </form>
